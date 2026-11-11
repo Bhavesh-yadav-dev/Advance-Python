@@ -1,4 +1,4 @@
-from components.database import Save_Issued_Books , Save_Books , Issued_Book , Student_Details , Books
+from components.database import Save_Issued_Books , Save_Books ,Save_Student_Details, Issued_Book , Student_Details , Books
 from datetime import datetime
 
 
@@ -10,6 +10,10 @@ def Issue_Book():
     Student_Id = input("Enter Student ID: ").strip().lower()
     if Student_Id not in Student_Details:
         print("Student ID not found. Please register the student first.")
+        return
+
+    if Student_Details[Student_Id]['Issued_Count'] >= 3:
+        print("Limit reached: A student cannot issue more than 3 books at a time.")
         return
     
     Book_ID = input("Enter Book ID: ").strip().lower()
@@ -25,6 +29,7 @@ def Issue_Book():
 
     if Details['Issued_Copies'] < Details['Total_Copies']:
         Books[Book_ID]['Issued_Copies'] += 1
+        Student_Details[Student_Id]['Issued_Count'] += 1
         Issued_Date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         Issued_Book.append({
             "Book_ID": Book_ID,
@@ -34,6 +39,8 @@ def Issue_Book():
         })
     Save_Books(Books)
     Save_Issued_Books(Issued_Book)
+    Save_Student_Details(Student_Details)
+    
     print("Book issued successfully.")
     print(f"Book: {Details['Book_Name']}")
     print(f"Issued To: {Student_Details[Student_Id]['Student_Name']}")

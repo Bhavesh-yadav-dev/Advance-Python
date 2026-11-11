@@ -1,3 +1,4 @@
+from components.library_record import Library_Record
 from components.Add_Books import Add_Books
 from components.Display_All_Books import Display_All_Books
 from components.Search_Books import Search_Books
@@ -32,6 +33,8 @@ def menu():
             Delete_Book()
         elif choice == "6":
             Student_Registration()
+        elif choice == "7":
+            Library_Record()
         elif choice == "0":
             print("Exiting... Goodbye!")
             break

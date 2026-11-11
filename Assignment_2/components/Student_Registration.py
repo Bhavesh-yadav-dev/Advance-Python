@@ -21,7 +21,8 @@ def Student_Registration():
         Student_Details[Student_ID] = {
             "Student_Name": Student_Name,       
             "Department": Department,
-            "Contact_Number": Contact_Number    
+            "Contact_Number": Contact_Number,
+            "Issued_Count": 0    
         }
         Save_Student_Details(Student_Details)
         print(f"---------- Student {i + 1} Registered Successfully ----------\n")   

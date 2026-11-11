@@ -25,6 +25,9 @@ def Return_Book():
 
                 Return_Date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 Issued_Book[issued_book]['Return_Date'] = Return_Date
+                if Student_Details[Student_Id]['Issued_Count'] > 0:
+                    Student_Details[Student_Id]['Issued_Count'] -= 1
+                Save_Student_Details(Student_Details)
                 Books[Book_ID]['Issued_Copies'] -= 1
                 Save_Books(Books)
                 Save_Issued_Books(Issued_Book)
