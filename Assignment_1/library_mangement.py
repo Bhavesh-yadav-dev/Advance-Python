@@ -18,6 +18,7 @@ def save_Books_data(data):
         json.dump(data, file, indent=4)
 
 def load_Issued_Books_data():
+    
     with open("Issued_Books.json", "r") as file:
         data = json.load(file)
     return data
