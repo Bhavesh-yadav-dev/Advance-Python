@@ -1,10 +1,11 @@
-from components.library_record import Library_Record
 from components.Add_Books import Add_Books
 from components.Display_All_Books import Display_All_Books
 from components.Search_Books import Search_Books
 from components.Student_Registration import Student_Registration
 from components.Issue_Book import Issue_Book
 from components.Delete_Book import Delete_Book
+from components.library_record import Library_Record
+from components.Return_Book import Return_Book
 
 
 def menu():
@@ -16,6 +17,8 @@ def menu():
         print("4. Issue Book")
         print("5. Delete Book")
         print("6. Student Registration")
+        print("7. Return Book")
+        print("8. Library Record")
         print("0. Exit")
         print("================================================")
 
@@ -34,6 +37,8 @@ def menu():
         elif choice == "6":
             Student_Registration()
         elif choice == "7":
+            Return_Book()
+        elif choice == "8":
             Library_Record()
         elif choice == "0":
             print("Exiting... Goodbye!")
