@@ -7,3 +7,11 @@ Issued_Books.json
 loginPage.py
 C:\Users\bhavesh\OneDrive\Desktop\Python-course\Assignment_1\student_management_system.py
 
+C:\Users\bhavesh\OneDrive\Desktop\Python-course\Assignment_2\components\__pycache__
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Environment variables
+.env
